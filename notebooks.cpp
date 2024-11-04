@@ -25,7 +25,8 @@ int main() {
     int notebooks = calc_notebooks(balance, price);
     cout << notebooks << endl;
     
-    // Calculate the amount left over on your account after the purchase and output it on a new line
+    // Calculate the amount left over on your account after the purchase 
+    // and output it on a new line
     double new_balance = calc_balance(balance, price, notebooks);
     cout << new_balance << endl;
 }
