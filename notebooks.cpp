@@ -3,23 +3,23 @@
 #include <iostream>
 using namespace std;
 
-int calc_notebooks(auto b, auto p) {
+int calc_notebooks(float b, float p) {
     // number of notebooks = (balance / price)
     int notebooks = (b / p);
     return notebooks;
 }
 
-double calc_balance(auto b, auto p, int n) {
+float calc_balance(float b, float p, int n) {
     // new_balance = (balance - (price * notebooks))
-    double new_balance = (b - (p * n));
+    float new_balance = (b - (p * n));
     return new_balance;
 }
 
 int main() {
     // your account's balance
-    auto balance = 2452.4;
+    float balance = 2452.4f;
     // price for each notebook
-    auto price = 259.99;
+    float price = 259.99f;
 
     // Calculate the number of notebooks you can afford and output it
     int notebooks = calc_notebooks(balance, price);
