@@ -4,12 +4,13 @@
 using namespace std;
 
 int calc_notebooks(auto b, auto p) {
+    // number of notebooks = (balance / price)
     int notebooks = (b / p);
     return notebooks;
 }
 
 double calc_balance(auto b, auto p, int n) {
-    // new_balance = (balance - (price * notebooks)
+    // new_balance = (balance - (price * notebooks))
     double new_balance = (b - (p * n));
     return new_balance;
 }
