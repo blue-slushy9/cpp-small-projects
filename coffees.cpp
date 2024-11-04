@@ -1,4 +1,6 @@
-#include <iostream>
+// One of the small SoloLearn exercises
+
+#include <iostream> 
 using namespace std;
 #include <map>
 
@@ -9,7 +11,9 @@ std::map<int, std::string> create_map() {
     coffees[2] = "Americano";
     coffees[3] = "Cappuccino";
     coffees[4] = "Latte";
-    return coffees;
+    // Curious whether the below would work...
+	//string coffees_prefix = "std::map<int, std::string> ";
+    return coffees;//, coffees_prefix;
 }
 
 /*
