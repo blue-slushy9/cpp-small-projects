@@ -16,12 +16,6 @@ std::map<int, std::string> create_map() {
     return coffees;//, coffees_prefix;
 }
 
-/*
-print_selection(coffees) {
-	cout 
-}
-*/
-
 void switch_coffee(int num, std::map<int, std::string> coffees) {
 	switch(num) {
 		case 1:
@@ -46,5 +40,4 @@ int main() {
     cin >> choice;
     std::map<int, std::string> coffees = create_map();
     switch_coffee(choice, coffees);
-
 }
