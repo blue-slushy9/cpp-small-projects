@@ -10,11 +10,15 @@ map<int, string> create_map();
 // Declare switch function for selecting a coffee
 void switch_coffee(int num, map<int, string> coffees);
 
+// Declare function that prints coffee menu by iterating over the map
+void print_menu(map<int, string> coffees);
+
 // Declare function that prompts user for their choice in coffee
-void choose_coffee();
+void choose_coffee(map<int, string> coffees);
 
 int main() {
     map<int, string> coffees = create_map();
+	print_menu(coffees);
 	int choice = choose_coffee();
 }
 
@@ -49,20 +53,24 @@ string switch_coffee(int num, map<int, string> coffees) {
 	}
 }
 
-// Define function that prompts user for their choice in coffee
-void choose_coffee() {
-	cout << ("Here are the menu items: ") << endl;
+// Define function that prints coffee menu by iterating over the map
+void print_menu(map<int, string> coffees) {
+    cout << ("Here are the menu items: ") << endl;
 	// Iterate over contents of coffees map and print menu,
 	// 'const auto& pair' automatically detects the key-value types
 	for (const auto& pair : coffees) {
 		// 'pair.first' prints key, 'pair.second' prints value
 		cout << pair.first << ". " << pair.second << endl;
 	}
-	cout << ("Please enter the number of the coffee you want now: ");
+}
+
+// Define function that prompts user for their choice in coffee
+void choose_coffee(map<int, string> coffees) {
 	int order;
+	cout << ("Please enter the number of the coffee you want now: ");
 	cin >> order;
 	// Call switch_coffees function
-	string coffee = switch_coffee(order, map<int, string> coffees);
+	string coffee = switch_coffee(order, coffees);
 	// Confirm the order
 	cout << "You chose a " + coffee + ", sounds delicious! Enjoy." << endl;
 }
