@@ -1,4 +1,5 @@
-// One of the small SoloLearn exercises
+// One of the small SoloLearn exercises, this is a simple program that prints
+// the coffee menu and allows the user to place an order
 
 #include <iostream>
 #include <map>
@@ -17,9 +18,11 @@ void print_menu(map<int, string> coffees);
 void choose_coffee(map<int, string> coffees);
 
 int main() {
+	// Create map of the different coffees, capture in variable
     map<int, string> coffees = create_map();
 	print_menu(coffees);
-	int choice = choose_coffee();
+	// Enter selection and print it to terminal
+	choose_coffee(coffees);
 }
 
 // Define function that creates map of the different coffees
