@@ -12,8 +12,9 @@ void check_age(int num);
 
 int main() {
     int age = enter_age();
+	// check_age() returns the price tier based on the age that is entered
     string price = check_age(age);
-    
+    confirm_ticket();
 }
 
 // Define function that takes age as input and capture it in a variable
@@ -23,6 +24,8 @@ int enter_age() {
 	cin >> num;
 	return num;
 }
+
+// Define function that encapsulates enter_age and 
 
 // Define function that prints ticket type based on the age entered
 string check_age(int num) {
@@ -36,12 +39,27 @@ string check_age(int num) {
 		string price = "Normal";
 	}
 	else {
-		cout << ("Invalid number, please enter a real age: ") << endl;
-		// Call function recursively until valid age is entered
-		check_age(num);
+		cout << ("Invalid number, let's try again.") << endl;
+		// Call previous function recursively until a valid age is entered
+		int correct_age = enter_age();
+		// Call this function recursively to process the new age entered above
+		check_age(correct_age);
 	}
 }
 
-void print_confirmation(int num, string ) {
-	cout << "Okay, since the age of the person is " + age + \", your ticket will be " + num "!";
+void confirm_ticket(int num, string ) {
+	cout << "Okay, since the age of the person is " + age + \", your ticket will be " + num "!" \
+	        "Is this correct? [Y/n] ";
+    char y_n;
+	cin >> y_n;
+	if (y_n == "y") {
+
+	}
+	else if (y_n == "n") {
+
+	}
+    else {
+		cout << "Please enter a valid response." << endl;
+		confirm_ticket()
+	}
 }
