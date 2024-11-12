@@ -8,11 +8,14 @@ using namespace std;
 int enter_age();
 
 // Declare function that prints ticket type based on the age entered
-void check_age(int num);
+string check_age(int num);
+
+// Declare function that prints ticket type to terminal and prompts user for confirmation 
+confirm_ticket();
 
 int main() {
     int age = enter_age();
-	// check_age() returns the price tier based on the age that is entered
+    // check_age() returns the price tier based on the age that is entered
     string price = check_age(age);
     confirm_ticket();
 }
@@ -47,11 +50,16 @@ string check_age(int num) {
 	}
 }
 
+// Define function that prints ticket type to terminal and prompts user for confirmation
 void confirm_ticket(int num, string ) {
-	cout << "Okay, since the age of the person is " + age + \", your ticket will be " + num "!" \
-	        "Is this correct? [Y/n] ";
-    char y_n;
+	string message = "Okay, since the age of the person is " + age + ", your\n"
+	                 "ticket will be " + num ". Is this correct? [Y/n] ";
+	// Print above message to terminal
+	cout << message;
+	// Declare variable that will store user's Yes or No response
+	char y_n;
 	cin >> y_n;
+
 	if (y_n == "y") {
 
 	}
