@@ -25,7 +25,7 @@ int main() {
 	all_functions();
 }
 
-/*
+/* Don't think I need this anymore, but keeping it for now just in case
 int main() {
     int age = enter_age();
     // check_age() returns the price tier based on the age that is entered
@@ -41,8 +41,6 @@ int enter_age() {
 	cin >> num;
 	return num;
 }
-
-// Define function that encapsulates enter_age and 
 
 // Define function that prints ticket type based on the age entered
 string check_age(int num) {
